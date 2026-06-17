@@ -8,6 +8,7 @@ from abs_multi_period_simulator import MultiPeriodABSSimulator
 # --- 1. PREMIUM INSTITUTIONAL VISUAL STYLING ---
 st.set_page_config(page_title="Enpal Golden Ray ABS Terminal", layout="wide")
 
+# I inject custom institutional stylesheets directly into the presentation DOM using the correct HTML bypass flag
 st.markdown("""
     <style>
         body { background-color: #0f172a; color: #f8fafc; }
@@ -137,7 +138,7 @@ else:
     
     ### ⚙️ Systems Engineering Breakdown: What I Developed
     
-    #### 1. Underwritten Asset Tape Architecture (`generate_portfolio.py`)
+    #### 1. Underwritten Asset Tape Architecture ([`generate_portfolio.py`](https://github.com/sanjeevjha21/enpal-abs-simulator/blob/main/generate_portfolio.py))
     I constructed an automated data pipeline to underwrite a synthetic pool of **10,000 distinct customer contracts** representing over **€270 Million in originations**. I enforced a hard **75% Solar and 25% Heat Pump equipment allocation mix** to align with real-world corporate diversification goals. Rather than assuming static customer default probabilities, I used a right-skewed **Beta Credit Distribution** to assign a unique Probability of Default ($PD$) to each system. This accurately models a premium, high-credit-quality consumer book containing unexpected long-tail credit anomalies.
     
     #### 2. Liability Layering, Credit Enhancement, and Subordination
